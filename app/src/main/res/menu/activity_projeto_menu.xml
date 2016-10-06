@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ProjetoActivity">
+
+    <item
+        android:id="@+id/action_new"
+        android:icon="@drawable/ic_action_add"
+        android:title="Nova Atividade"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/activity_projeto_menu_submenu_1"
+        android:title="Exibir"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/action_linear_layout"
+                android:title="Lista"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_grid_layout"
+                android:title="Grade"
+                app:showAsAction="never" />
+        </menu>
+
+    </item>
+    <item
+        android:id="@+id/activity_projeto_menu_submenu_2"
+        android:title="Ordenar"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/action_ordenar_prioridade"
+                android:title="Por Prioridade"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_ordenar_maior_valor"
+                android:title="Por Maior Valor"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_ordenar_menor_valor"
+                android:title="Por Menor Valor"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+
+
+
+
+</menu>
