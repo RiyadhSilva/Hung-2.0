@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
             //Chama a intent NovoProjeto
             Intent i = new Intent(this, NovoProjetoActivity.class);
             startActivity(i);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

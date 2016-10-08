@@ -117,6 +117,12 @@ public class ProjetoActivity extends AppCompatActivity {
         } else if (id == R.id.action_ordenar_maior_valor){
             ordenaMaiorValor(atividades);
             return true;
+        } else if (id == R.id.action_graph){
+            Intent i = new Intent(this, GraphActivity.class);
+            i.putExtra("id", projetoID);
+            i.putExtra("nome", projeto.nome);
+            startActivity(i);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
