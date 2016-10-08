@@ -14,6 +14,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ProjetoActivity extends AppCompatActivity {
@@ -23,6 +26,7 @@ public class ProjetoActivity extends AppCompatActivity {
     private TextView tv_desc;
     private RecyclerView recyclerView;
     private Projeto projeto;
+    private List<Atividade> atividades;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +62,7 @@ public class ProjetoActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         //Lista e adapter
         AtividadeDB atividadeDB = new AtividadeDB(this);
-        List<Atividade> atividades = atividadeDB.findAllByProjetoID(projetoID);
+        atividades = atividadeDB.findAllByProjetoID(projetoID);
 
         recyclerView.setAdapter(new AtividadeAdapter(this, atividades, onClickAtividade()));
     }
@@ -106,9 +110,61 @@ public class ProjetoActivity extends AppCompatActivity {
             Intent i = new Intent(this, NovaAtividadeActivity.class);
             i.putExtra("projeto_id", projetoID);
             startActivity(i);
+            return true;
+        } else if (id == R.id.action_ordenar_prioridade){
+            ordenaPrioridade(atividades);
+            return true;
+        } else if (id == R.id.action_ordenar_maior_valor){
+            ordenaMaiorValor(atividades);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void ordenaMaiorValor(List<Atividade> atividades) {
+        Collections.sort(atividades, new Comparator<Atividade>() {
+            @Override
+            public int compare(Atividade t1, Atividade t2) {
+                Double c1 = Double.parseDouble(t1.custo);
+                Double c2 = Double.parseDouble(t2.custo);
+                return c1.compareTo(c2);
+            }
+        });
+
+        Collections.reverse(atividades);
+
+        recyclerView.setAdapter(new AtividadeAdapter(this, atividades, onClickAtividade()));
+
+
+    }
+
+    private void ordenaPrioridade(List<Atividade> atividades) {
+        List<Atividade> ordenada  = new ArrayList<>();
+
+        for (Atividade a:
+                atividades) {
+            if(a.prioridade.equals("alta")){
+                ordenada.add(a);
+            }
+        }
+
+        for (Atividade a:
+                atividades) {
+            if(a.prioridade.equals("normal")){
+                ordenada.add(a);
+            }
+        }
+
+        for (Atividade a:
+                atividades) {
+            if(a.prioridade.equals("baixa")){
+                ordenada.add(a);
+            }
+        }
+
+        recyclerView.setAdapter(new AtividadeAdapter(this, ordenada, onClickAtividade()));
+
     }
 
     @Override

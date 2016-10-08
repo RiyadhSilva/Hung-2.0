@@ -33,15 +33,11 @@
         <menu>
             <item
                 android:id="@+id/action_ordenar_prioridade"
-                android:title="Por Prioridade"
+                android:title="Prioridade"
                 app:showAsAction="never" />
             <item
                 android:id="@+id/action_ordenar_maior_valor"
-                android:title="Por Maior Valor"
-                app:showAsAction="never" />
-            <item
-                android:id="@+id/action_ordenar_menor_valor"
-                android:title="Por Menor Valor"
+                android:title="Maior Valor"
                 app:showAsAction="never" />
         </menu>
     </item>
