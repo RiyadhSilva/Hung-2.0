@@ -37,9 +37,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(new ProjetoAdapter(this, projetos, onClickProjeto()));
 
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setIcon(R.drawable.ic_hung);
-        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setIcon(R.drawable.ic_app_logo);
+        actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setTitle("Meus Projetos");
+
 
     }
 

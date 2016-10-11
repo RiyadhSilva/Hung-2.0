@@ -94,7 +94,7 @@ public class AtividadeAdapter extends RecyclerView.Adapter<AtividadeAdapter.Ativ
                 Intent i = new Intent(context, NovaAtividadeActivity.class);
                 i.putExtra("atividade", a);
                 context.startActivity(i);
-                toast(a.nome + " foi iniciada!");
+
             }
 
             private void toast(String msg){

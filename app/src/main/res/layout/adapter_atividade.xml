@@ -47,6 +47,15 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#827717"
+                    android:layout_alignBottom="@+id/atividade_recyclerView"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                </View>
+
                <ImageButton
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"

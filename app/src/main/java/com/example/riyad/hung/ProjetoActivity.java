@@ -47,8 +47,6 @@ public class ProjetoActivity extends AppCompatActivity {
 
         }
 
-        System.out.println("O id do projeto eh: " + projetoID);
-
         getSupportActionBar().setTitle(nome + " - Atividades");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -78,6 +76,7 @@ public class ProjetoActivity extends AppCompatActivity {
         return new AtividadeAdapter.AtividadeOnClickListener(){
             @Override
             public void onClickAtividade(View view, int idx){
+                /*
                 AtividadeDB atividadeDB = new AtividadeDB(view.getContext());
                 List<Atividade> atividades = atividadeDB.findAllByProjetoID(projetoID);
                 Atividade a = atividades.get(idx);
@@ -87,6 +86,7 @@ public class ProjetoActivity extends AppCompatActivity {
                 i.putExtra("atividade", a);
                 i.putExtra("projeto_id", a.id);
                 startActivity(i);
+                */
             }
         };
     }
