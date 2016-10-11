@@ -132,14 +132,6 @@ public class NovaAtividadeActivity extends AppCompatActivity {
         if(id == R.id.action_close){
             finish();
             return true;
-        } else if(id == R.id.action_grid_layout){
-            //Troca o modo de vizualicao para grid
-            return true;
-        } else if (id == R.id.action_new){
-            //Chama a intent NovoProjeto
-            Intent i = new Intent(this, NovoProjetoActivity.class);
-            startActivity(i);
-            return true;
         }
 
         return super.onOptionsItemSelected(item);

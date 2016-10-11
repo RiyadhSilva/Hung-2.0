@@ -5,9 +5,8 @@
     tools:context=".NovoProjetoActivity">
 
     <item
-        android:id="@+id/action_new"
-        android:icon="@drawable/ic_action_add"
-        android:title="Nova Atividade"
+        android:id="@+id/action_close"
+        android:title="Voltar"
         app:showAsAction="never" />
 
 
